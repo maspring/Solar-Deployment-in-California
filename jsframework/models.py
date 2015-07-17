@@ -1,3 +1,78 @@
 from django.db import models
 
 # Create your models here.
+
+
+class Deployment (models.Model):
+    application = models.CharField(max_length=256, blank=False)
+    utility = models.CharField(max_length=256, blank=True, null=True)
+    incentive = models.FloatField(max_length=10, default=u"0.0", null=True)
+    cost = models.FloatField(max_length=10, default=u"0.0", blank=True, null=True)
+    rating = models.FloatField(max_length=10, default=u"0.0", blank=True, null=True)
+    sector = models.CharField(max_length=256, blank=True, null=True)
+    city = models.CharField(max_length=256, blank=True, null=True)
+    county = models.CharField(max_length=256, blank=True, null=True)
+    state = models.CharField(max_length=16, blank=True, null=True)
+    zipcode = models.CharField(max_length=15, blank=True, null=True)
+    firstdate = models.DateField(blank=True, default=u"1960-01-01")
+    seconddate = models.DateField(blank=True, default=u"1960-01-01")
+    thirddate = models.DateField(blank=True, default=u"1960-01-01")
+    fourthdate = models.DateField(blank=True, default=u"1960-01-01")
+    seller = models.CharField(max_length=256, default="None", blank=True, null=True)
+    azimuth = models.CharField(max_length=256, default="None", blank=True, null=True)
+    tilt = models.CharField(max_length=256, default="None", blank=True, null=True)
+    tracking = models.CharField(max_length=256, default="None", blank=True, null=True)
+
+    def __unicode__(self):
+        return '{}'.format(self.city)
+
+
+
+class Statistics (models.Model):
+    zipcode = models.CharField(max_length=256, blank=False, unique=True)
+    totalProduction = models.FloatField(max_length=256, blank=True, null=True)
+    city = models.CharField(max_length=255, default=u"0.0", null=True)
+    totalDeployments = models.IntegerField(default=u"0", blank=True, null=True)
+    costOhSix = models.FloatField(max_length=10, default=u"0.0", blank=True, null=True)
+    productionOhSix = models.FloatField(max_length=10, blank=True, null=True)
+    costPerWattOhSix = models.FloatField(max_length=10, blank=True, null=True)
+    deploymentsOhSix = models.IntegerField(blank=True, null=True)
+    costOhSeven = models.FloatField(max_length=10, default=u"0.0", blank=True, null=True)
+    productionOhSeven = models.FloatField(max_length=10, blank=True, null=True)
+    costPerWattOhSeven = models.FloatField(max_length=10, blank=True, null=True)
+    deploymentsOhSeven = models.IntegerField(blank=True, null=True)
+    costOhEight = models.FloatField(max_length=10, default=u"0.0", blank=True, null=True)
+    productionOhEight = models.FloatField(max_length=10, blank=True, null=True)
+    costPerWattOhEight = models.FloatField(max_length=10, blank=True, null=True)
+    deploymentsOhEight = models.IntegerField(blank=True, null=True)
+    costOhNine = models.FloatField(max_length=10, default=u"0.0", blank=True, null=True)
+    productionOhNine = models.FloatField(max_length=10, blank=True, null=True)
+    costPerWattOhNine = models.FloatField(max_length=10, blank=True, null=True)
+    deploymentsOhNine = models.IntegerField(blank=True, null=True)
+    costTen = models.FloatField(max_length=10, default=u"0.0", blank=True, null=True)
+    productionTen = models.FloatField(max_length=10, blank=True, null=True)
+    costPerWattTen = models.FloatField(max_length=10, blank=True, null=True)
+    deploymentsTen = models.IntegerField(blank=True, null=True)
+    costEleven = models.FloatField(max_length=10, default=u"0.0", blank=True, null=True)
+    productionEleven = models.FloatField(max_length=10, blank=True, null=True)
+    costPerWattEleven = models.FloatField(max_length=10, blank=True, null=True)
+    deploymentsEleven = models.IntegerField(blank=True, null=True)
+    costTwelve = models.FloatField(max_length=10, default=u"0.0", blank=True, null=True)
+    productionTwelve = models.FloatField(max_length=10, blank=True, null=True)
+    costPerWattTwelve = models.FloatField(max_length=10, blank=True, null=True)
+    deploymentsTwelve = models.IntegerField(blank=True, null=True)
+    costThirteen = models.FloatField(max_length=10, default=u"0.0", blank=True, null=True)
+    productionThirteen = models.FloatField(max_length=10, blank=True, null=True)
+    costPerWattThirteen = models.FloatField(max_length=10, blank=True, null=True)
+    deploymentsThirteen = models.IntegerField(blank=True, null=True)
+    costFourteen = models.FloatField(max_length=10, default=u"0.0", blank=True, null=True)
+    productionFourteen = models.FloatField(max_length=10, blank=True, null=True)
+    costPerWattFourteen = models.FloatField(max_length=10, blank=True, null=True)
+    deploymentsFourteen = models.IntegerField(blank=True, null=True)
+    costFifteen = models.FloatField(max_length=10, default=u"0.0", blank=True, null=True)
+    productionFifteen = models.FloatField(max_length=10, blank=True, null=True)
+    costPerWattFifteen = models.FloatField(max_length=10, blank=True, null=True)
+    deploymentsFifteen = models.IntegerField(blank=True, null=True)
+
+    def __unicode__(self):
+        return '{}'.format(self.city)

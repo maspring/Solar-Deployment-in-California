@@ -19,5 +19,11 @@ from jsframework import views
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^$', views.base)
+    url(r'^$', views.base),
+
+    # API console and entry point
+    url(r'^api/statistics/', include('jsframework.api.urls')),
+    url(r'^api/deployments/', include('jsframework.api.urls'))
+
+
 ]
