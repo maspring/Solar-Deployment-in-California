@@ -1,6 +1,6 @@
 # Solar-Deployment-in-California
 
-The Solar Deployment Visualization Project provides and interactive choropleth for all residential solar installations recorded as part of the Go Solar California initiative. 
+The Solar Deployment Visualization Project provides an interactive choropleth for all residential solar installations recorded as part of the Go Solar California initiative. 
 
 Statistics from Go Solar California are updated periodically but fall off dramatically in 2014 and 2015. 
 
